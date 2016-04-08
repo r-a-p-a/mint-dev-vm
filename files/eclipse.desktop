@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=4.5
+Type=Application
+Name=Eclipse Mars
+GenericName=eclipse-4.5 2
+Comment=Eclipse JEE IDE
+Exec=/opt/eclipse/eclipse
+Icon=/opt/eclipse/icon.xpm
+Terminal=false
+Categories=GNOME;Application;Development;IDE;Java;
+StartupNotify=false

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.10.11
+Type=Application
+Name=VS Code
+GenericName=vscode-0.10.11
+Comment=MS Visual Studio Code
+Exec=/opt/VSCode-linux-x64/code
+Icon=/opt/VSCode-linux-x64/resources/app/resources/linux/code.png
+Terminal=false
+Categories=GNOME;Application;Development;Editor;
+StartupNotify=false
