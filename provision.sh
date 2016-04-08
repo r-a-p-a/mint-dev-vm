@@ -43,3 +43,16 @@ wget "https://vscode-update.azurewebsites.net/latest/linux-x64/stable" -O $VSCOD
 echo " ==> Downloaded and extracted MS Visual Studio Code to /opt/VSCode-linux-x64"
 ln -s /opt/VSCode-linux-x64/code /usr/local/bin/code
 mv /tmp/files/vscode.desktop /usr/share/applications/vscode.desktop
+
+echo " ==> Obtaining mozilla-extension-manager script ..."
+wget -O /usr/local/sbin/mozilla-extension-manager https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/mozilla/mozilla-extension-manager
+chmod +x /usr/local/sbin/mozilla-extension-manager
+
+echo " ==> Installing Firefox add-ons ..."
+mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/1865/addon-1865-latest.xpi     # Adblock Plus
+mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/9609/addon-9609-latest.xpi     # Ghostery
+mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/722/addon-722-latest.xpi       # NoScript Security Suite
+mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/405191/addon-405191-latest.xpi # Markdown Viewer
+mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/472577/addon-472577-latest.xpi # Classic Theme Restorer
+mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/671381/addon-671381-latest.xpi # Tab Groups
+echo " ==> Firefox add-ons installed globally."

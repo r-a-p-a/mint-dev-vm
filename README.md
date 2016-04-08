@@ -1,14 +1,23 @@
-## Vagrantfile and scripts for a Mint Cinnamon 17.3 VM
+## Vagrantfile & scripts for Mint 17.3 Developers VM
 
-Building upon the [rapa/mint-17.3-dev base box](https://atlas.hashicorp.com/rapa/boxes/mint-17.3-dev)
+Building upon the Mint Cinnamon 17.3 [rapa/mint-17.3-dev base box](https://atlas.hashicorp.com/rapa/boxes/mint-17.3-dev)
 ( [also available from source in GitHub](https://github.com/r-a-p-a/mint-dev-box) ), the 
 `Vagrantfile` and scripts available in this repository install:
 
 * Eclipse Mars
 * Visual Studio Code
 * Geany
+* Firefox Extensions
 * Git Config
 
+## Building your Developers VM
+
+You will need to have both [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/) installed.
+Then, after you have cloned this repository, all you need to do from the root of your cloned repository is:
+
+    $ vagrant up
+
+## Installation Details
 ### Eclipse Mars
 
 In order to reduce my own personal 'setup' time with Eclipse, the scripts in this repository
@@ -21,12 +30,21 @@ Currently only a single plugin is installed:
 
 ### Visual Studio Code
 
-This is a 'vanilla' install, with the intention that it be used for TypeScript development.
+This is a 'vanilla' install, with the intention that it be used for TypeScript or similar development.
 
 ### Geany
 
-My main reason for installing the Geany editor as a complement to `gedit` is to have an
-editor that remembers which files were being edited from the previous session.
+Geany has been installed as a complement to `gedit` in order to have an
+editor that automatically remembers which files were edited in the previous session and opens
+them automatically.
+
+### Firefox Extensions
+* Adblock Plus
+* Ghostery
+* NoScript Security Suite
+* Markdown Viewer
+* Classic Theme Restorer
+* Tab Groups
 
 ### Git Config
 
