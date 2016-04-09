@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 
 #export DEBIAN_FRONTEND=noninteractive
    
@@ -48,6 +48,10 @@ echo " ==> Obtaining mozilla-extension-manager script ..."
 wget -O /usr/local/sbin/mozilla-extension-manager https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/mozilla/mozilla-extension-manager
 chmod +x /usr/local/sbin/mozilla-extension-manager
 
+# Set some default preferences in Firefox - this is a bit of a 'scattergun' approach, and it's only partially working  :(
+cp /tmp/files/autoFirefox.js /usr/lib/firefox/browser/defaults/preferences/
+mv /tmp/files/autoFirefox.js /usr/lib/firefox/defaults/pref/
+
 echo " ==> Installing Firefox add-ons ..."
 mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/1865/addon-1865-latest.xpi     # Adblock Plus
 mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/9609/addon-9609-latest.xpi     # Ghostery
@@ -56,3 +60,4 @@ mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/
 mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/472577/addon-472577-latest.xpi # Classic Theme Restorer
 mozilla-extension-manager --install --global https://addons.mozilla.org/firefox/downloads/latest/671381/addon-671381-latest.xpi # Tab Groups
 echo " ==> Firefox add-ons installed globally."
+
