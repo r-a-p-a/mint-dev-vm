@@ -13,12 +13,11 @@ echo " ==> Installed pv"
 $apt install geany
 echo " ==> Installed geany as an alternative editor to gedit"
 
-
-echo " ==> about to wget eclipse ..."
 mkdir /opt/eclipse
 E_P="jee"   # Eclipse Package
-E_R="mars"  # Eclipse Release
-E_V="2"     # Eclipse Version
+E_R="neon"  # Eclipse Release
+E_V="R"     # Eclipse Version
+echo " ==> about to wget eclipse ${E_P}-${E_R}-${E_V} ..."
 wget -qO- \
 	"http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/${E_R}/${E_V}/eclipse-${E_P}-${E_R}-${E_V}-linux-gtk-x86_64.tar.gz&r=1" \
 	| pv --interval 5 --force -r -b | tar xz -C /opt
@@ -39,6 +38,7 @@ chmod -R g+w /opt/workspace
 
 echo " ==> about to wget VS Code ..."
 VSCODE_TMP="VSCode-linux-x64.zip"
+#wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable    <- for a .deb package
 wget "https://vscode-update.azurewebsites.net/latest/linux-x64/stable" -O $VSCODE_TMP && unzip -d /opt $VSCODE_TMP && rm $VSCODE_TMP 
 echo " ==> Downloaded and extracted MS Visual Studio Code to /opt/VSCode-linux-x64"
 ln -s /opt/VSCode-linux-x64/code /usr/local/bin/code

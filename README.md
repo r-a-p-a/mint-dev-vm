@@ -4,7 +4,7 @@ Building upon the Mint Cinnamon 17.3 [rapa/mint-17.3-dev base box](https://atlas
 ( [also available from source in GitHub](https://github.com/r-a-p-a/mint-dev-box) ), the 
 `Vagrantfile` and scripts available in this repository install:
 
-* Eclipse Mars
+* Eclipse Neon
 * Visual Studio Code
 * Geany
 * Firefox Extensions
@@ -18,12 +18,14 @@ Then, after you have cloned this repository, all you need to do from the root of
     $ vagrant up
 
 ## Installation Details
-### Eclipse Mars
+### Eclipse Neon
 
 In order to reduce my own personal 'setup' time with Eclipse, the scripts in this repository
 preset various (Java slanted) preferences to my own choices. This has also meant that
 a pre-determined workspace has been configured in `/opt/workspace`. Use these files
 as the basis for scripting your own automated Eclipse installation.
+
+This is a brand new release of Eclipse, so it's not had much real world usage yet.
 #### Eclipse Plugins
 Currently only a single plugin is installed:
 * YEdit
